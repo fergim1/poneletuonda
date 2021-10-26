@@ -18,7 +18,7 @@
   width: 120px;
   height: 120px;
 }
-.sneaker-wrapper{
+.sneaker-wrapper {
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -26,8 +26,8 @@
   height: 40%;
   position: relative;
 }
-.sneaker-img{
-  position: absolute; 
+.sneaker-img {
+  position: absolute;
   width: 630px;
   height: 270px;
 }
@@ -50,7 +50,7 @@
   justify-content: center;
   align-items: center;
 }
-.section-wrapper{
+.section-wrapper {
   cursor: pointer;
   background: transparent;
   outline: none;
@@ -110,7 +110,7 @@
   opacity: 0.3;
 }
 
-.rec.rec-arrow{
+.rec.rec-arrow {
   background-color: transparent;
 }
 .rec.rec-arrow:hover {
@@ -120,32 +120,30 @@
   background-color: grey !important;
 }
 
-
 /* ------- SCREEN 1000px ------- */
 /* ------- SCREEN 1000px ------- */
 @media screen and (max-width: 1000px) {
-  .sneaker-img{
+  .sneaker-img {
     width: 570px;
     height: 243px;
   }
- .sections-wrapper {
-   width: 95%;
- }
- .colors-wrapper {
-   width: 95%;
- }
- 
+  .sections-wrapper {
+    width: 95%;
+  }
+  .colors-wrapper {
+    width: 95%;
+  }
 }
 /* ------- SCREEN 768px ------- */
 /* ------- SCREEN 768px ------- */
 @media screen and (max-width: 768px) {
-  .logo-wrapper{
+  .logo-wrapper {
     display: none;
   }
   .sneaker-wrapper {
     height: 55%;
   }
-  .sneaker-img{
+  .sneaker-img {
     width: 400px;
     height: 170px;
   }
@@ -171,6 +169,7 @@
   }
   .sections-name {
     padding: 1px;
+    font-size: 15px;
   }
   .colors-wrapper {
     width: 95%;
@@ -183,7 +182,7 @@
   .rec.rec-slider-container {
     margin: 0px;
   }
-  .rec.rec-arrow{
+  .rec.rec-arrow {
     background-color: transparent;
     border-radius: 0px;
     min-width: 20px;
@@ -193,15 +192,13 @@
   }
 }
 
-
-
 /* ------- SCREEN 450px ------- */
 /* ------- SCREEN 450px ------- */
 @media screen and (max-width: 450px) {
   .App {
     justify-content: start;
   }
-  .logo-wrapper{
+  .logo-wrapper {
     display: flex;
     height: 15%;
   }
@@ -210,15 +207,15 @@
     width: 90px;
     height: 90px;
   }
-  .sneaker-wrapper{
+  .sneaker-wrapper {
     width: 100%;
-    height: 37%;
+    height: 35%;
     position: relative;
     justify-content: center;
     display: flex;
     align-items: center;
   }
-  .sneaker-img{
+  .sneaker-img {
     width: 357px;
     height: 154px;
   }
@@ -231,10 +228,59 @@
     width: 140px;
     height: 70px;
   }
- 
+  .sections-name {
+    padding: 5px;
+  }
+  .colors-wrapper {
+    height: 10%;
+  }
   .colors-img {
     width: 60px;
   }
+}
 
+@media screen and (max-width: 900px) and (orientation: landscape){
+  .App {
+    display: flex;
+    justify-content: start;
+   align-items: center;
+  }
+  .logo-wrapper {
+    display: none;
+  }
+  .sneaker-wrapper {
+    width: 100%;
+    height: 50%;
+    position: relative;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+  }
+  .sneaker-img {
+    width: 357px;
+    height: 154px;
+  }
+  .sections-wrapper {
+    height: 25%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+  }
+
+  .sections-img {
+    width: 130px;
+    height: 60px;
+  }
+  .sections-name {
+    padding: 2px;
+  }
+  .colors-wrapper {
+    height: 20%;
+    width: 70%;
+  }
+  .colors-img {
+    width: 50px;
+  }
 }

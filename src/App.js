@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import whiteSneakerBackground from "./images/white-sneaker.png";
-import Carousel from "react-elastic-carousel";
 import GraySections from "./images/colors/sections/secciones.js";
 import Logo from "./logo-400x400.png";
 import {
@@ -15,24 +14,14 @@ import {
   trensillas,
   whiteSneaker,
 } from "./images/colors/colors.js";
+import { CgMenuGridR } from 'react-icons/cg'
+import { Modal } from "./component/Modal";
 
 import "./App.css";
 
-const breakPointsSections = [
-  { width: 1, itemsToShow: 2 },
-  { width: 550, itemsToShow: 2, itemsToScroll: 2 },
-  { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 3 },
-];
-
-const breakPointsColors = [
-  { width: 1, itemsToShow: 4 },
-  { width: 550, itemsToShow: 6 },
-  { width: 768, itemsToShow: 6 },
-  { width: 1200, itemsToShow: 6 },
-];
 
 export const App = () => {
+  const [modalOpen, setModalOpen] = useState(false)
   const [sectionSelected, setSectionSelected] = useState("puntera");
   const [sections, setSections] = useState({
     puntera: whiteSneaker.puntera,
@@ -48,6 +37,7 @@ export const App = () => {
 
   const handleSectionSelected = (sectionSelected) => {
     setSectionSelected(sectionSelected);
+    handleModal()
   };
 
   const handleColorSelected = (sectionColor) => {
@@ -60,17 +50,41 @@ export const App = () => {
   const handleColorsBySection = (array) => {
     return array.map((obj, index) => {
       return (
-        <div className="styling-example" key={index}>
-          <img
-            className="colors-img"
-            src={obj.colorImg}
-            alt={obj.color}
-            onClick={() => handleColorSelected(obj.sectionColor)}
-          />
-        </div>
+        <img
+          className="colors-img"
+          key={index}
+          src={obj.colorImg}
+          alt={obj.color}
+          onClick={() => handleColorSelected(obj.sectionColor)}
+        />
       );
     });
   };
+
+  const filterSection = (array) => {
+    let [oneSection] = array.filter(
+      (section) => section.nombre === sectionSelected
+    );
+    return (
+      <div
+        className="sections-one-selected"
+        onClick={() => handleSectionSelected(oneSection.nombre)}
+      >
+        <p 
+          className="sections-only-name"
+        >
+          {oneSection.nombre}
+        </p>
+          <CgMenuGridR
+            className='sections-icon'
+          />
+      </div>
+    );
+  };
+
+  const handleModal = () => {
+    setModalOpen(!modalOpen)
+  }
 
   return (
     <div className="App">
@@ -79,7 +93,11 @@ export const App = () => {
       </div>
 
       <div className="sneaker-wrapper">
-        <img src={whiteSneakerBackground} alt="sneaker-background" className="sneaker-img" />
+        <img
+          src={whiteSneakerBackground}
+          alt="sneaker-background"
+          className="sneaker-img"
+        />
         <img src={sections.cordones} alt="cordones" className="sneaker-img" />
         <img src={sections.interior} alt="interior" className="sneaker-img" />
         <img src={sections.lateral} alt="lateral" className="sneaker-img" />
@@ -92,52 +110,39 @@ export const App = () => {
       </div>
 
       <div className="sections-wrapper">
-        <Carousel breakPoints={breakPointsSections} pagination={false}>
-          {GraySections.map((obj, index) => (
-            <div className="styling-example" key={index}>
-              <button
-                className="section-wrapper"
-                onClick={() => handleSectionSelected(obj.nombre)}
-              >
-                <img
-                  className="sections-img"
-                  src={obj.seccion}
-                  alt={obj.nombre}
-                />
-                <p
-                  className={`sections-name ${
-                    sectionSelected === obj.nombre && "selected"
-                  } `}
-                >
-                  {obj.nombre}
-                </p>
-              </button>
-            </div>
-          ))}
-        </Carousel>
+        {filterSection(GraySections)}
       </div>
 
       <div className="colors-wrapper">
-        <Carousel breakPoints={breakPointsColors} pagination={false}>
-          {sectionSelected === "puntera" && handleColorsBySection(punteras)}
+        {sectionSelected === "puntera" && handleColorsBySection(punteras)}
 
-          {sectionSelected === "lateral" && handleColorsBySection(laterales)}
+        {sectionSelected === "lateral" && handleColorsBySection(laterales)}
 
-          {sectionSelected === "suela" && handleColorsBySection(suelas)}
+        {sectionSelected === "suela" && handleColorsBySection(suelas)}
 
-          {sectionSelected === "cordones" && handleColorsBySection(cordones)}
+        {sectionSelected === "cordones" && handleColorsBySection(cordones)}
 
-          {sectionSelected === "interior" && handleColorsBySection(interiores)}
+        {sectionSelected === "interior" && handleColorsBySection(interiores)}
 
-          {sectionSelected === "ojalillos" && handleColorsBySection(ojalillos)}
+        {sectionSelected === "ojalillos" && handleColorsBySection(ojalillos)}
 
-          {sectionSelected === "trensilla" && handleColorsBySection(trensillas)}
+        {sectionSelected === "trensilla" && handleColorsBySection(trensillas)}
 
-          {sectionSelected === "talon" && handleColorsBySection(talones)}
+        {sectionSelected === "talon" && handleColorsBySection(talones)}
 
-          {sectionSelected === "lengueta" && handleColorsBySection(lenguetas)}
-        </Carousel>
+        {sectionSelected === "lengueta" && handleColorsBySection(lenguetas)}
       </div>
+
+      {
+        modalOpen 
+        &&
+        <Modal 
+          handleModal={handleModal} 
+          handleSectionSelected={handleSectionSelected}
+          sectionSelected= {sectionSelected}
+        />
+      }
+     
     </div>
   );
 };

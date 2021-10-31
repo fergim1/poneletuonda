@@ -14,14 +14,17 @@ import {
   trensillas,
   whiteSneaker,
 } from "./images/colors/colors.js";
-import { CgMenuGridR } from 'react-icons/cg'
+import { MdOutlineMenu } from 'react-icons/md'
 import { Modal } from "./component/Modal";
 
 import "./App.css";
+import { SideSections } from "./component/SideSections";
+import { SideOneSection } from "./component/SideOneSection";
 
 
 export const App = () => {
   const [modalOpen, setModalOpen] = useState(false)
+  const [sideSections, setSideSections] = useState(false)
   const [sectionSelected, setSectionSelected] = useState("puntera");
   const [sections, setSections] = useState({
     puntera: whiteSneaker.puntera,
@@ -38,6 +41,11 @@ export const App = () => {
   const handleSectionSelected = (sectionSelected) => {
     setSectionSelected(sectionSelected);
     handleModal()
+  };
+
+  const handleSideSectionSelected = (sectionSelected) => {
+    setSectionSelected(sectionSelected);
+    handleSideSections()
   };
 
   const handleColorSelected = (sectionColor) => {
@@ -75,16 +83,23 @@ export const App = () => {
         >
           {oneSection.nombre}
         </p>
-          <CgMenuGridR
+          <MdOutlineMenu
             className='sections-icon'
           />
       </div>
     );
   };
 
+ 
+
   const handleModal = () => {
     setModalOpen(!modalOpen)
   }
+
+  const handleSideSections = () => {
+    setSideSections(!sideSections)
+  }
+  
 
   return (
     <div className="App">
@@ -93,55 +108,76 @@ export const App = () => {
       </div>
 
       <div className="sneaker-wrapper">
-        <img
-          src={whiteSneakerBackground}
-          alt="sneaker-background"
-          className="sneaker-img"
-        />
-        <img src={sections.cordones} alt="cordones" className="sneaker-img" />
-        <img src={sections.interior} alt="interior" className="sneaker-img" />
-        <img src={sections.lateral} alt="lateral" className="sneaker-img" />
-        <img src={sections.lengueta} alt="lengueta" className="sneaker-img" />
-        <img src={sections.ojalillos} alt="ojalillos" className="sneaker-img" />
-        <img src={sections.puntera} alt="puntera" className="sneaker-img" />
-        <img src={sections.suela} alt="suela" className="sneaker-img" />
-        <img src={sections.talon} alt="talon" className="sneaker-img" />
-        <img src={sections.trensilla} alt="trensilla" className="sneaker-img" />
+        <div className='sneaker-wrapper-sneaker-background'>
+          <img
+            src={whiteSneakerBackground}
+            alt="sneaker-background"
+            className="sneaker-img"
+          />
+          <img src={sections.cordones} alt="cordones" className="sneaker-img" />
+          <img src={sections.interior} alt="interior" className="sneaker-img" />
+          <img src={sections.lateral} alt="lateral" className="sneaker-img" />
+          <img src={sections.lengueta} alt="lengueta" className="sneaker-img" />
+          <img src={sections.ojalillos} alt="ojalillos" className="sneaker-img" />
+          <img src={sections.puntera} alt="puntera" className="sneaker-img" />
+          <img src={sections.suela} alt="suela" className="sneaker-img" />
+          <img src={sections.talon} alt="talon" className="sneaker-img" />
+          <img src={sections.trensilla} alt="trensilla" className="sneaker-img" />
+        </div>
+          {/* <SideOneSection
+            sectionSelected={sectionSelected}
+            handleSideSections={handleSideSections}
+          /> */}
+
       </div>
 
       <div className="sections-wrapper">
         {filterSection(GraySections)}
       </div>
 
-      <div className="colors-wrapper">
-        {sectionSelected === "puntera" && handleColorsBySection(punteras)}
+      <div className="sections-and-color-container">
+          <SideOneSection
+            sectionSelected={sectionSelected}
+            handleSideSections={handleSideSections}
+          />
+        <div className='colors-wrapper-img-circle'>
+          {sectionSelected === "puntera" && handleColorsBySection(punteras)}
 
-        {sectionSelected === "lateral" && handleColorsBySection(laterales)}
+          {sectionSelected === "lateral" && handleColorsBySection(laterales)}
 
-        {sectionSelected === "suela" && handleColorsBySection(suelas)}
+          {sectionSelected === "suela" && handleColorsBySection(suelas)}
 
-        {sectionSelected === "cordones" && handleColorsBySection(cordones)}
+          {sectionSelected === "cordones" && handleColorsBySection(cordones)}
 
-        {sectionSelected === "interior" && handleColorsBySection(interiores)}
+          {sectionSelected === "interior" && handleColorsBySection(interiores)}
 
-        {sectionSelected === "ojalillos" && handleColorsBySection(ojalillos)}
+          {sectionSelected === "ojalillos" && handleColorsBySection(ojalillos)}
 
-        {sectionSelected === "trensilla" && handleColorsBySection(trensillas)}
+          {sectionSelected === "trensilla" && handleColorsBySection(trensillas)}
 
-        {sectionSelected === "talon" && handleColorsBySection(talones)}
+          {sectionSelected === "talon" && handleColorsBySection(talones)}
 
-        {sectionSelected === "lengueta" && handleColorsBySection(lenguetas)}
+          {sectionSelected === "lengueta" && handleColorsBySection(lenguetas)}
+          <SideSections
+          sideSections={sideSections}
+          handleSideSectionSelected={handleSideSectionSelected}
+          sectionSelected= {sectionSelected} 
+        />
+        </div>
       </div>
-
-      {
-        modalOpen 
-        &&
+        
+        {/* <SideSections
+          sideSections={sideSections}
+          handleSideSectionSelected={handleSideSectionSelected}
+          sectionSelected= {sectionSelected} 
+        /> */}
         <Modal 
+          modalOpen={modalOpen}
           handleModal={handleModal} 
           handleSectionSelected={handleSectionSelected}
           sectionSelected= {sectionSelected}
         />
-      }
+
      
     </div>
   );

@@ -15,8 +15,8 @@
   height: 15%;
 }
 .logo-img {
-  width: 110px;
-  height: 110px;
+  width: 80px;
+  height: 80px;
 }
 .sneaker-wrapper {
   display: flex;
@@ -30,19 +30,17 @@
   align-items: center;
   width: 100%;
 }
-.sneaker-wrapper-gray-sections{
+.sneaker-wrapper-gray-sections {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 45%;
 }
-
 .sneaker-img {
   position: absolute;
-  width: 690px;
-  height: 288px;
+  width: 600px;
+  height: 253px;
 }
-
 .sections-side-one-selected-desktop {
   width: 213px;
   height: 130px;
@@ -62,7 +60,6 @@
   width: 185px;
   height: 80px;
 }
-
 .sections-only-name-desktop {
   margin: 3px;
   width: 100%;
@@ -75,7 +72,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 830px;
+  width: 850px;
   background: white;
   position: fixed;
   top: auto;
@@ -90,7 +87,8 @@
   border: 1px solid hsl(0, 0%, 93%);
   padding-bottom: 30px;
   padding-top: 25px;
-
+  padding-bottom: 60px;
+  padding-top: 50px;
 }
 .side-sections-wrapper {
   display: flex;
@@ -104,7 +102,7 @@
   width: 213px;
   height: 93px;
   cursor: pointer;
-  margin-right: 20px;
+  padding: 0px 10px;
   transition: transform 150ms ease-in;
 }
 .side-sections-img:hover {
@@ -125,7 +123,6 @@
   text-transform: uppercase;
   border-bottom: 3px solid #000000;
 }
-
 .sections-wrapper {
   display: none;
 }
@@ -152,28 +149,33 @@
 }
 .sections-name {
   text-align: center;
-    text-transform: capitalize;
-    color: #b3b3b3;
-    margin: 1px 8px 3px 8px;
+  text-transform: capitalize;
+  color: #b3b3b3;
+  margin: 1px 8px 3px 8px;
 }
-.sections-and-color-container{
+.sections-and-color-container {
   width: 830px;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 30%;
+  height: 33%;
   border: 1px solid #e4e4e4;
   border-radius: 10px;
   background: #eeeeee;
+  margin-top: 20px;
 }
 .sections-side-one-selected-desktop {
   width: 230px;
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   background: white;
+}
+.sections-side-icon {
+  font-size: 35px;
+  color: #9b9999;
 }
 .colors-wrapper-img-circle {
   width: 600px;
@@ -181,28 +183,24 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
- 
 }
-.colors-img:hover {
-  transform: scale(1.5);
-  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 2px 9px 0 rgb(0 0 0 / 19%);
-}
-
 .colors-img {
-  width: 48px;
+  width: 43px;
   border-radius: 50%;
   border: 1px solid lightgray;
   cursor: pointer;
   margin: 8px;
 }
+.colors-img:hover {
+  transform: scale(1.5);
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 2px 9px 0 rgb(0 0 0 / 19%);
+}
 .rec .rec-carousel {
   width: 100%;
 }
-
 .cNNJIt {
   opacity: 0.3;
 }
-
 .rec.rec-arrow {
   background-color: transparent;
 }
@@ -215,60 +213,66 @@
 .modal-close {
   display: none;
 }
-
 .side-sections-close {
   display: none;
 }
 
-
-/* ------- SCREEN 1000px ------- */
-/* ------- SCREEN 1000px ------- */
-@media screen and (max-width: 1000px) {
+/* ------- SCREEN 768px ------- */
+/* ------- SCREEN 768px ------- */
+@media screen and (max-width: 850px) {
+  .App {
+    background: white;
+  }
+  .logo-wrapper {
+    background: #f7f7f7;
+  }
+  .logo-img {
+    margin-top: 20px;
+  }
+  .sneaker-wrapper {
+    height: 100%;
+    background: #f7f7f7;
+  }
   .sneaker-img {
-    width: 570px;
-    height: 243px;
+    width: 580px;
+    height: 244px;
   }
-  .sections-wrapper {
-    width: 95%;
-  }
-  .sections-and-color-container{
-    width: 95%;
-  }
-}
-/* ------- SCREEN 768px ------- */
-/* ------- SCREEN 768px ------- */
-@media screen and (max-width: 768px) {
   .sneaker-wrapper-gray-sections {
     display: none;
   }
-  .logo-wrapper {
-    display: none;
-  }
   .sneaker-wrapper-sneaker-background {
-    width: 100%;
-    height: 35%;
     position: relative;
     justify-content: center;
     display: flex;
     align-items: center;
   }
-  .sneaker-img {
-    width: 400px;
-    height: 170px;
-  }
-  .logo-img {
-    width: 100px;
-    height: 100px;
-  }
   .sections-side-one-selected-desktop {
     display: none;
   }
   .sections-wrapper {
-    width: 95%;
-    height: 45%;
+    height: 10%;
+    width: 100%;
+    display: flex;
+  }
+  .sections-one-selected {
     display: flex;
     justify-content: center;
     align-items: center;
+    background: white;
+    color: #b3b3b3;
+    width: 100%;
+    height: 100%;
+  }
+  .sections-only-name {
+    text-align: center;
+    text-transform: capitalize;
+    padding: 11px 40px;
+    border-radius: 4px;
+    font-size: 20px;
+  }
+  .sections-icon {
+    font-size: 30px;
+    margin-right: 10px;
   }
   button:focus {
     outline: none;
@@ -284,13 +288,54 @@
     font-size: 15px;
     margin-bottom: 10px;
   }
-  .sections-and-color-container{
-    width: 95%;
-    margin-top: 5px;
-    margin-bottom: 0px;
+  .sections-and-color-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 35%;
+    background: #ffffff;
+    border: none;
+    margin-bottom: 30px;
   }
   .colors-img {
-    width: 55px;
+    width: 48px;
+  }
+  .modal-container {
+    background-color: rgba(0, 0, 0, 0.3);
+    justify-content: flex-end;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+  }
+  .modal-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    background: white;
+    padding-bottom: 40px;
+  }
+  .modal-wrapper-icon-close {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-top: 1px solid #b8b8b8;
+    border-bottom: none;
+  }
+  .modal-icon-close {
+    color: rgb(174, 174, 174);
+    font-size: 26px;
+    margin: 10px;
   }
   .rec.rec-slider-container {
     margin: 0px;
@@ -302,6 +347,13 @@
     width: 25px;
     height: 90px;
     box-shadow: none !important;
+  }
+}
+
+@media screen and (max-width: 540px) {
+  .sneaker-img {
+    width: 529px;
+    height: 224px;
   }
 }
 
@@ -362,42 +414,10 @@
     border-radius: 4px;
     font-size: 20px;
   }
-
-  .modal-container {
-    background-color: rgba(0, 0, 0, 0.3);
-    justify-content: flex-end;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-  }
   .modal-wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    background: white; 
+    padding-bottom: 0px;
   }
-  .modal-wrapper-icon-close {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    background: white;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-    border-top: 1px solid #b8b8b8;
-    border-bottom: none;
-  }
-  .modal-icon-close {
-    color: rgb(174, 174, 174);
-    font-size: 26px;
-    margin: 10px;
-  }
-  .sections-and-color-container{
+  .sections-and-color-container {
     width: 100%;
     height: 43%;
     display: flex;
@@ -423,9 +443,21 @@
     width: 38px;
   }
 }
+@media screen and (max-width: 280px) {
+  .sneaker-img {
+    width: 274px;
+    height: 126px;
+  }
+  .sections-img {
+    width: 120px;
+    height: 59px;
+  }
+  .colors-img {
+    width: 36px;
+  }
+}
 
-
-@media screen and (max-width: 900px) and (orientation: landscape){
+@media screen and (max-width: 830px) and (orientation: landscape) {
   .App {
     background: white;
     display: flex;
@@ -481,15 +513,17 @@
   }
   .sections-name {
     padding: 3px;
-}
-  .sections-and-color-container{
+  }
+  .sections-and-color-container {
     display: flex;
     flex-wrap: wrap;
     background: white;
-    height: 43%;
     width: 434px;
     margin-top: 0;
     border: none;
+  }
+  .sections-side-one-selected-desktop {
+    display: none;
   }
   .colors-img {
     width: 38px;
@@ -501,22 +535,19 @@
   .side-sections-close {
     display: none;
   }
- .modal-container {
-  background: white;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  top: 0;
-  position: fixed;
- }
-
-  
+  .modal-container {
+    background: white;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: fixed;
+  }
   .modal-container {
     position: fixed;
     width: 100%;
     height: 100vh;
     background: #f7f7f7;
-
   }
   .modal-background {
     display: contents;
@@ -529,6 +560,7 @@
     justify-content: space-evenly;
     align-content: center;
     height: 100%;
+    padding-bottom: 0;
   }
   .modal-wrapper-icon-close {
     display: flex;
@@ -537,7 +569,7 @@
     align-items: center;
   }
   .modal-icon-close {
-    display:  none;
+    display: none;
   }
 }
 

@@ -14,17 +14,16 @@ import {
   trensillas,
   whiteSneaker,
 } from "./images/colors/colors.js";
-import { MdOutlineMenu } from 'react-icons/md'
-import { Modal } from "./component/Modal";
-
-import "./App.css";
 import { SideSections } from "./component/SideSections";
 import { SideOneSection } from "./component/SideOneSection";
+import { Modal } from "./component/Modal";
+import { MdOutlineMenu } from "react-icons/md";
 
+import "./App.css";
 
 export const App = () => {
-  const [modalOpen, setModalOpen] = useState(false)
-  const [sideSections, setSideSections] = useState(false)
+  const [modalOpen, setModalOpen] = useState(false);
+  const [sideSections, setSideSections] = useState(false);
   const [sectionSelected, setSectionSelected] = useState("puntera");
   const [sections, setSections] = useState({
     puntera: whiteSneaker.puntera,
@@ -40,12 +39,12 @@ export const App = () => {
 
   const handleSectionSelected = (sectionSelected) => {
     setSectionSelected(sectionSelected);
-    handleModal()
+    handleModal();
   };
 
   const handleSideSectionSelected = (sectionSelected) => {
     setSectionSelected(sectionSelected);
-    handleSideSections()
+    handleSideSections();
   };
 
   const handleColorSelected = (sectionColor) => {
@@ -78,28 +77,19 @@ export const App = () => {
         className="sections-one-selected"
         onClick={() => handleSectionSelected(oneSection.nombre)}
       >
-        <p 
-          className="sections-only-name"
-        >
-          {oneSection.nombre}
-        </p>
-          <MdOutlineMenu
-            className='sections-icon'
-          />
+        <p className="sections-only-name">{oneSection.nombre}</p>
+        <MdOutlineMenu className="sections-icon" />
       </div>
     );
   };
 
- 
-
   const handleModal = () => {
-    setModalOpen(!modalOpen)
-  }
+    setModalOpen(!modalOpen);
+  };
 
   const handleSideSections = () => {
-    setSideSections(!sideSections)
-  }
-  
+    setSideSections(!sideSections);
+  };
 
   return (
     <div className="App">
@@ -108,7 +98,7 @@ export const App = () => {
       </div>
 
       <div className="sneaker-wrapper">
-        <div className='sneaker-wrapper-sneaker-background'>
+        <div className="sneaker-wrapper-sneaker-background">
           <img
             src={whiteSneakerBackground}
             alt="sneaker-background"
@@ -118,29 +108,30 @@ export const App = () => {
           <img src={sections.interior} alt="interior" className="sneaker-img" />
           <img src={sections.lateral} alt="lateral" className="sneaker-img" />
           <img src={sections.lengueta} alt="lengueta" className="sneaker-img" />
-          <img src={sections.ojalillos} alt="ojalillos" className="sneaker-img" />
+          <img
+            src={sections.ojalillos}
+            alt="ojalillos"
+            className="sneaker-img"
+          />
           <img src={sections.puntera} alt="puntera" className="sneaker-img" />
           <img src={sections.suela} alt="suela" className="sneaker-img" />
           <img src={sections.talon} alt="talon" className="sneaker-img" />
-          <img src={sections.trensilla} alt="trensilla" className="sneaker-img" />
+          <img
+            src={sections.trensilla}
+            alt="trensilla"
+            className="sneaker-img"
+          />
         </div>
-          {/* <SideOneSection
-            sectionSelected={sectionSelected}
-            handleSideSections={handleSideSections}
-          /> */}
-
       </div>
 
-      <div className="sections-wrapper">
-        {filterSection(GraySections)}
-      </div>
+      <div className="sections-wrapper">{filterSection(GraySections)}</div>
 
       <div className="sections-and-color-container">
-          <SideOneSection
-            sectionSelected={sectionSelected}
-            handleSideSections={handleSideSections}
-          />
-        <div className='colors-wrapper-img-circle'>
+        <SideOneSection
+          sectionSelected={sectionSelected}
+          handleSideSections={handleSideSections}
+        />
+        <div className="colors-wrapper-img-circle">
           {sectionSelected === "puntera" && handleColorsBySection(punteras)}
 
           {sectionSelected === "lateral" && handleColorsBySection(laterales)}
@@ -159,26 +150,19 @@ export const App = () => {
 
           {sectionSelected === "lengueta" && handleColorsBySection(lenguetas)}
           <SideSections
-          sideSections={sideSections}
-          handleSideSectionSelected={handleSideSectionSelected}
-          sectionSelected= {sectionSelected} 
-        />
+            sideSections={sideSections}
+            handleSideSectionSelected={handleSideSectionSelected}
+            sectionSelected={sectionSelected}
+          />
         </div>
       </div>
-        
-        {/* <SideSections
-          sideSections={sideSections}
-          handleSideSectionSelected={handleSideSectionSelected}
-          sectionSelected= {sectionSelected} 
-        /> */}
-        <Modal 
-          modalOpen={modalOpen}
-          handleModal={handleModal} 
-          handleSectionSelected={handleSectionSelected}
-          sectionSelected= {sectionSelected}
-        />
 
-     
+      <Modal
+        modalOpen={modalOpen}
+        handleModal={handleModal}
+        handleSectionSelected={handleSectionSelected}
+        sectionSelected={sectionSelected}
+      />
     </div>
   );
 };

@@ -7,6 +7,7 @@
   height: 100vh;
   background: #f7f7f7;
 }
+
 .logo-wrapper {
   display: flex;
   justify-content: center;
@@ -14,52 +15,62 @@
   width: 100%;
   height: 15%;
 }
+
 .logo-img {
   width: 80px;
   height: 80px;
 }
+
 .sneaker-wrapper {
   display: flex;
   width: 100%;
   height: 45%;
   position: relative;
 }
+
 .sneaker-wrapper-sneaker-background {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
+
 .sneaker-wrapper-gray-sections {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 45%;
 }
+
 .sneaker-img {
   position: absolute;
   width: 600px;
   height: 253px;
 }
+
 .sections-side-one-selected-desktop {
   width: 213px;
   height: 130px;
   background: white;
   cursor: pointer;
 }
+
 .sections-side-one-selected-desktop:hover {
   background: #f7f7f7;
 }
+
 .sections-side-one-selected-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 .sections-side-img {
   width: 185px;
   height: 80px;
 }
+
 .sections-only-name-desktop {
   margin: 3px;
   width: 100%;
@@ -68,6 +79,7 @@
   color: #9b9999;
   font-size: 20px;
 }
+
 .side-sections-container {
   display: flex;
   flex-wrap: wrap;
@@ -90,6 +102,7 @@
   padding-bottom: 60px;
   padding-top: 50px;
 }
+
 .side-sections-wrapper {
   display: flex;
   flex-direction: column;
@@ -98,6 +111,7 @@
   background: transparent;
   border: none;
 }
+
 .side-sections-img {
   width: 213px;
   height: 93px;
@@ -105,9 +119,11 @@
   padding: 0px 10px;
   transition: transform 150ms ease-in;
 }
+
 .side-sections-img:hover {
   transform: scale(1.1);
 }
+
 .side-sections-name {
   text-align: center;
   text-transform: capitalize;
@@ -115,6 +131,7 @@
   margin: 2px;
   font-size: 15px;
 }
+
 .side-sections-name-selected {
   padding: 3px 45px;
   color: black;
@@ -123,36 +140,43 @@
   text-transform: uppercase;
   border-bottom: 3px solid #000000;
 }
+
 .sections-wrapper {
   display: none;
 }
+
 .section-wrapper {
   cursor: pointer;
   background: transparent;
   outline: none;
   border: none;
 }
+
 .modal-sections-name-selected {
   color: white !important;
   font-weight: bold;
   background: #b3b3b3 !important;
   border-radius: 6px;
 }
+
 .sections-img {
   width: 250px;
   height: 110px;
   cursor: pointer;
   transition: transform 150ms ease-in;
 }
+
 .sections-img:hover {
   transform: scale(1.1);
 }
+
 .sections-name {
   text-align: center;
   text-transform: capitalize;
   color: #b3b3b3;
   margin: 1px 8px 3px 8px;
 }
+
 .sections-and-color-container {
   width: 830px;
   display: flex;
@@ -164,6 +188,7 @@
   background: #eeeeee;
   margin-top: 20px;
 }
+
 .sections-side-one-selected-desktop {
   width: 230px;
   height: 100%;
@@ -173,10 +198,12 @@
   align-items: center;
   background: white;
 }
+
 .sections-side-icon {
   font-size: 35px;
   color: #9b9999;
 }
+
 .colors-wrapper-img-circle {
   width: 600px;
   display: flex;
@@ -184,35 +211,44 @@
   justify-content: center;
   align-items: center;
 }
+
 .colors-img {
-  width: 43px;
+  width: 40px;
   border-radius: 50%;
   border: 1px solid lightgray;
   cursor: pointer;
-  margin: 8px;
+  margin: 3px;
 }
+
 .colors-img:hover {
-  transform: scale(1.5);
+  transform: scale(2);
   box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 2px 9px 0 rgb(0 0 0 / 19%);
 }
+
 .rec .rec-carousel {
   width: 100%;
 }
+
 .cNNJIt {
   opacity: 0.3;
 }
+
 .rec.rec-arrow {
   background-color: transparent;
 }
+
 .rec.rec-arrow:hover {
   background-color: grey !important;
 }
+
 .rec.rec-arrow:focus {
   background-color: grey !important;
 }
+
 .modal-close {
   display: none;
 }
+
 .side-sections-close {
   display: none;
 }
@@ -223,37 +259,46 @@
   .App {
     background: white;
   }
+
   .logo-wrapper {
     background: #f7f7f7;
   }
+
   .logo-img {
     margin-top: 20px;
   }
+
   .sneaker-wrapper {
     height: 100%;
     background: #f7f7f7;
   }
+
   .sneaker-img {
     width: 580px;
     height: 244px;
   }
+
   .sneaker-wrapper-gray-sections {
     display: none;
   }
+
   .sneaker-wrapper-sneaker-background {
     position: relative;
     justify-content: center;
     display: flex;
     align-items: center;
   }
+
   .sections-side-one-selected-desktop {
     display: none;
   }
+
   .sections-wrapper {
     height: 10%;
     width: 100%;
     display: flex;
   }
+
   .sections-one-selected {
     display: flex;
     justify-content: center;
@@ -263,6 +308,7 @@
     width: 100%;
     height: 100%;
   }
+
   .sections-only-name {
     text-align: center;
     text-transform: capitalize;
@@ -270,24 +316,29 @@
     border-radius: 4px;
     font-size: 20px;
   }
+
   .sections-icon {
     font-size: 30px;
     margin-right: 10px;
   }
+
   button:focus {
     outline: none;
     box-shadow: none;
     background-color: none;
   }
+
   .sections-img {
     width: 190px;
     height: 85px;
   }
+
   .sections-name {
     padding: 1px;
     font-size: 15px;
     margin-bottom: 10px;
   }
+
   .sections-and-color-container {
     width: 100%;
     display: flex;
@@ -299,9 +350,11 @@
     border: none;
     margin-bottom: 30px;
   }
+
   .colors-img {
     width: 48px;
   }
+
   .modal-container {
     background-color: rgba(0, 0, 0, 0.3);
     justify-content: flex-end;
@@ -313,6 +366,7 @@
     display: flex;
     flex-direction: column;
   }
+
   .modal-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -321,6 +375,7 @@
     background: white;
     padding-bottom: 40px;
   }
+
   .modal-wrapper-icon-close {
     display: flex;
     width: 100%;
@@ -332,14 +387,17 @@
     border-top: 1px solid #b8b8b8;
     border-bottom: none;
   }
+
   .modal-icon-close {
     color: rgb(174, 174, 174);
     font-size: 26px;
     margin: 10px;
   }
+
   .rec.rec-slider-container {
     margin: 0px;
   }
+
   .rec.rec-arrow {
     background-color: transparent;
     border-radius: 0px;
@@ -363,15 +421,18 @@
   .App {
     justify-content: start;
   }
+
   .logo-wrapper {
     display: flex;
     height: 15%;
   }
+
   .logo-img {
     margin-top: 5px;
     width: 70px;
     height: 70px;
   }
+
   .sneaker-wrapper {
     width: 100%;
     height: 35%;
@@ -380,6 +441,7 @@
     display: flex;
     align-items: center;
   }
+
   .sneaker-img {
     width: 320px;
     height: 141px;
@@ -394,6 +456,7 @@
     width: 140px;
     height: 70px;
   }
+
   .sections-one-selected {
     display: flex;
     justify-content: center;
@@ -403,10 +466,12 @@
     height: 100%;
     width: 100%;
   }
+
   .sections-icon {
     font-size: 30px;
     margin-right: 10px;
   }
+
   .sections-only-name {
     text-align: center;
     text-transform: capitalize;
@@ -414,9 +479,11 @@
     border-radius: 4px;
     font-size: 20px;
   }
+
   .modal-wrapper {
     padding-bottom: 0px;
   }
+
   .sections-and-color-container {
     width: 100%;
     height: 43%;
@@ -428,6 +495,7 @@
     background: white;
     border: none;
   }
+
   .colors-img {
     width: 41px;
     margin-left: 5px;
@@ -443,15 +511,18 @@
     width: 38px;
   }
 }
+
 @media screen and (max-width: 280px) {
   .sneaker-img {
     width: 274px;
     height: 126px;
   }
+
   .sections-img {
     width: 120px;
     height: 59px;
   }
+
   .colors-img {
     width: 36px;
   }
@@ -464,9 +535,11 @@
     justify-content: flex-start;
     align-items: center;
   }
+
   .logo-wrapper {
     display: none;
   }
+
   .sneaker-wrapper {
     width: 100%;
     height: 47%;
@@ -476,10 +549,12 @@
     align-items: center;
     background: #f7f7f7;
   }
+
   .sneaker-img {
     width: 360px;
     height: 151px;
   }
+
   .sections-wrapper {
     height: 10%;
     width: 100%;
@@ -487,6 +562,7 @@
     justify-content: center;
     align-items: center;
   }
+
   .sections-one-selected {
     display: flex;
     justify-content: center;
@@ -496,10 +572,12 @@
     height: 100%;
     width: 100%;
   }
+
   .sections-icon {
     font-size: 30px;
     margin-right: 10px;
   }
+
   .sections-only-name {
     text-align: center;
     text-transform: capitalize;
@@ -507,13 +585,16 @@
     border-radius: 4px;
     font-size: 18px;
   }
+
   .sections-img {
     width: 180px;
     height: 79px;
   }
+
   .sections-name {
     padding: 3px;
   }
+
   .sections-and-color-container {
     display: flex;
     flex-wrap: wrap;
@@ -522,19 +603,24 @@
     margin-top: 0;
     border: none;
   }
+
   .sections-side-one-selected-desktop {
     display: none;
   }
+
   .colors-img {
     width: 38px;
     margin: 3px;
   }
+
   .modal-close {
     display: none;
   }
+
   .side-sections-close {
     display: none;
   }
+
   .modal-container {
     background: white;
     bottom: 0;
@@ -543,17 +629,20 @@
     top: 0;
     position: fixed;
   }
+
   .modal-container {
     position: fixed;
     width: 100%;
     height: 100vh;
     background: #f7f7f7;
   }
+
   .modal-background {
     display: contents;
     justify-content: center;
     align-items: center;
   }
+
   .modal-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -562,12 +651,14 @@
     height: 100%;
     padding-bottom: 0;
   }
+
   .modal-wrapper-icon-close {
     display: flex;
     width: 100%;
     justify-content: flex-end;
     align-items: center;
   }
+
   .modal-icon-close {
     display: none;
   }
